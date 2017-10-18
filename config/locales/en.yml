@@ -3,6 +3,8 @@ en:
   about_info: "The Ruby on Rails Tutorial is a book and screencast series to teach web development with Ruby on Rails. This is the sample application for the tutorial."
   contact: "Contact"
   contact_info: "Contact the Ruby on Rails Tutorial about the sample app at the contact page"
+  create_acc: "Create my account"
+  error: "Error"
   hello: "Hello world"
   help: "Help"
   help_info: "Get help on the Ruby on Rails Tutorial at the Rails Tutorial help section. To get help on this sample app, see the Ruby on Rails Tutorial book."
@@ -17,6 +19,8 @@ en:
   sign_up: "Sign up"
   sign_up_info: "This will be a signup page for new users."
   sign_up_now: "Sign up now!"
+  the_form_contains: "The form contains"
   title: "Ruby on Rails Tutorial Sample App"
   welcome: "Welcome to the Sample App"
+  user_not_found: "Cannot find user!"
   
