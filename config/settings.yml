@@ -1,3 +1,4 @@
 max_length_email: 255
 max_length_name: 50
 min_length_password: 6
+gravatar_size: 80
