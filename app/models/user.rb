@@ -8,7 +8,15 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   has_secure_password
-  validates :password, presence: true, length: {minimum: Settings.min_length_password}
+  validates :password, presence: true, length: {minimum: Settings.min_length_password}, 
+    allow_nil: true
+
+  scope :select_id_name_email, ->{select :id, :name, :email }
+  scope :order_created_at, ->{order :created_at }
+
+  def current_user? user
+    self == user
+  end
 
   class << self
     def digest string
