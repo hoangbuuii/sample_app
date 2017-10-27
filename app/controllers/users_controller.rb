@@ -16,11 +16,11 @@ class UsersController < ApplicationController
   def show; end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new user_params
     if @user.save
-      log_in @user
-      flash[:success] = t "welcome"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t ".check_email_to_activate"
+      redirect_to root_url
     else
       render :new
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:success] = t "profile_updated"
+      flash[:success] = t ".profile_updated"
       redirect_to @user
     else
       render :edit
@@ -39,9 +39,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = t "user_deleted"
+      flash[:success] = t ".user_deleted"
     else
-      flash[:danger] = t "user_cannot_be_deleted"
+      flash[:danger] = t ".user_cannot_be_deleted"
     end
     redirect_to users_url
   end
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = t "please_log_in"
+        flash[:danger] = t ".please_log_in"
         redirect_to login_url
       end
     end
@@ -66,14 +66,13 @@ class UsersController < ApplicationController
     end
 
     def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      redirect_to(root_url) unless current_user.is_admin?
     end
 
     def load_user
       @user = User.find_by id: params[:id]
       return if @user
-      flash[:warning] = t "cannot_find_user"
+      flash[:warning] = t ".cannot_find_user"
       redirect_to root_path
     end
-    
 end
