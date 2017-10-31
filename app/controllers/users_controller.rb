@@ -13,7 +13,10 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
-  def show; end
+  def show
+    @microposts = @user.microposts.order_by_created_at_desc
+      .paginate page: params[:page], per_page: Settings.per_page
+  end
 
   def create
     @user = User.new user_params
@@ -55,7 +58,7 @@ class UsersController < ApplicationController
     def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = t ".please_log_in"
+        flash[:danger] = t "please_log_in"
         redirect_to login_url
       end
     end
