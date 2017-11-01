@@ -4,6 +4,7 @@ en:
   account_activation: "Account activation"
   account_not_activated: "Account not activated."
   activate: "Activate"
+  ago: "ago"
   confirmation: "Confirmation"
   contact: "Contact"
   delete: "Delete"
@@ -15,17 +16,27 @@ en:
   home: "Home"
   log_in: "Log in"
   log_out: "Log out"
+  maxium_file_size_is_5mb: "Maximum file size is 5MB. Please choose a smaller file."
+  microposts: "Microposts"
   news: "News"
   password_reset: "Password Reset"
+  posted: "Posted"
   profile: "Profile"
   ror: "Ruby on Rails"
   sample_app: "sample app"
   settings: "Setting"
   sign_up: "Sign up"
+  submit: "Submit"
   title: "Ruby on Rails Tutorial Sample App"
   update_your_profile: "Update your profile"
   user: "User"
-
+  you_sure: "Are you sure?"
+  please_log_in: "Please log in."
+  
+  microposts_created: "Micropost created!"
+  micropost_deleted: "Micropost deleted"
+  cannot_delete: "Cannot delete!"
+  
   account_activations:
     edit:
       account_activated: "Account activated!"
@@ -43,6 +54,7 @@ en:
       rails_logo : "Rails logo"
       sign_up_now: "Sign up now!"
       welcome: "Welcome to the Sample App"
+      micropost_feed: "Micropost Feed"
 
   layouts:
     footer:
@@ -58,7 +70,13 @@ en:
 
   shared:
     error_messages:
-      the_form_contains: "The form contains"
+      the_form_contains: "The form contains: "
+    micropost_form:
+      compose_new_micropost: "Compose new micropost..."
+      post: "Post"
+    user_info:
+      microposts: "Microposts"
+      view_my_profile: "View my profile"
 
   user_mailer:
     account_activation:
@@ -71,8 +89,6 @@ en:
       please ignore this email and your password will stay as it is."
 
   users:
-    user:
-      you_sure: "Are you sure?"
     edit:
       edit_user: "Edit user"
       save_changes: "Save changes"
@@ -88,10 +104,8 @@ en:
       user_deleted: "User deleted"
     create:
       check_email_to_activate: "Please check your email to activate your account."
-    index:
-      please_log_in: "Please log in"
     show:
-      cannot_find_user: "Cannot find user!"
+      cannot_find_user: "Cannot find user!"    
 
   password_resets:
     create:
@@ -99,6 +113,7 @@ en:
       email_not_found: "Email address not found."
     edit:
       password_reset_expired: "Password reset has expired."
+      cannot_find_user: "Cannot find user!" 
     update:
       password_cant_be_empty: "Password can't be empty"
       password_reset_success: "Password has been reset."

@@ -1,5 +1,5 @@
 class PasswordResetsController < ApplicationController
-  before_action :get_user, only: %i(edit update)
+  before_action :load_user, only: %i(edit update)
   before_action :valid_user, only: %i(edit update)
   before_action :check_expiration, only: %i(edit update)
 
@@ -40,12 +40,15 @@ class PasswordResetsController < ApplicationController
     params.require(:user).permit(:password, :password_confirmation)
   end
 
-  def get_user
-    @user = User.find_by(email: params[:email])
+  def load_user
+    @user = User.find_by email: params[:email]
+    return if @user
+    flash[:warning] = t ".cannot_find_user"
+    redirect_to root_path
   end
 
   def valid_user
-    unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
+    unless @user && @user.activated? && @user.authenticated?(:reset, params[:id])
       redirect_to root_url
     end
   end
