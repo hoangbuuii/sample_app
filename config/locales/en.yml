@@ -5,10 +5,15 @@ en:
   account_not_activated: "Account not activated."
   activate: "Activate"
   ago: "ago"
+  cannot_delete: "Cannot delete!"
+  cannot_find_user: "Cannot find user!"
   confirmation: "Confirmation"
   contact: "Contact"
   delete: "Delete"
   error: "Error"
+  follow: "follow"
+  followers: "followers"
+  following: "following"
   forgot_password: "Forgot password"
   hello: "Hello world"
   help: "Help"
@@ -17,9 +22,12 @@ en:
   log_in: "Log in"
   log_out: "Log out"
   maxium_file_size_is_5mb: "Maximum file size is 5MB. Please choose a smaller file."
+  micropost_deleted: "Micropost deleted"
   microposts: "Microposts"
+  microposts_created: "Micropost created!"
   news: "News"
   password_reset: "Password Reset"
+  please_log_in: "Please log in."
   posted: "Posted"
   profile: "Profile"
   ror: "Ruby on Rails"
@@ -28,14 +36,11 @@ en:
   sign_up: "Sign up"
   submit: "Submit"
   title: "Ruby on Rails Tutorial Sample App"
+  unfollow: "unfollow"
   update_your_profile: "Update your profile"
   user: "User"
+  view_my_profile: "View my profile"
   you_sure: "Are you sure?"
-  please_log_in: "Please log in."
-  
-  microposts_created: "Micropost created!"
-  micropost_deleted: "Micropost deleted"
-  cannot_delete: "Cannot delete!"
   
   account_activations:
     edit:
@@ -76,7 +81,6 @@ en:
       post: "Post"
     user_info:
       microposts: "Microposts"
-      view_my_profile: "View my profile"
 
   user_mailer:
     account_activation:
@@ -104,8 +108,7 @@ en:
       user_deleted: "User deleted"
     create:
       check_email_to_activate: "Please check your email to activate your account."
-    show:
-      cannot_find_user: "Cannot find user!"    
+    show:    
 
   password_resets:
     create:
@@ -113,7 +116,6 @@ en:
       email_not_found: "Email address not found."
     edit:
       password_reset_expired: "Password reset has expired."
-      cannot_find_user: "Cannot find user!" 
     update:
       password_cant_be_empty: "Password can't be empty"
       password_reset_success: "Password has been reset."

@@ -1,5 +1,6 @@
 gravatar_size: 80
 gravatar_small_size: 50
+gravatar_smaller_size: 30
 max_length_content: 140
 max_length_email: 255
 max_length_name: 50
