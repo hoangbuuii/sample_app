@@ -43,7 +43,7 @@ class PasswordResetsController < ApplicationController
   def load_user
     @user = User.find_by email: params[:email]
     return if @user
-    flash[:warning] = t ".cannot_find_user"
+    flash[:warning] = t "cannot_find_user"
     redirect_to root_path
   end
 
